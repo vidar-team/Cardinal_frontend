@@ -1,18 +1,18 @@
 <template>
     <div id="app">
         <v-app>
-            <v-app-bar
-                    app
-                    clipped-left
-                    color="transparent"
-            >
-                <v-toolbar-title>
-
-                </v-toolbar-title>
+            <v-app-bar app clipped-left color="transparent">
+                <v-toolbar-title>HCTF</v-toolbar-title>
+                <v-toolbar-items class="ml-5">
+                    <v-btn text to="/">靶机状态</v-btn>
+                    <v-btn text to="/rank">排名</v-btn>
+                    <v-btn text to="/bulletin">公告</v-btn>
+                    <v-btn text @click="onLogout">登出</v-btn>
+                </v-toolbar-items>
             </v-app-bar>
 
             <v-content>
-                <router-view></router-view>
+                <router-view/>
             </v-content>
 
         </v-app>
