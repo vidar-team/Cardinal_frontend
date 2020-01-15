@@ -22,9 +22,15 @@
 <script>
     export default {
         name: 'app',
-        components: {
-
-        }
+        methods: {
+            onLogout(){
+                this.utils.GET("/logout").then(() => {
+                    localStorage.removeItem('token')
+                    this.$router.push('/login')
+                })
+            }
+        },
+        components: {}
     }
 </script>
 
