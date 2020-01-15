@@ -44,11 +44,11 @@
         methods:{
             // 时间倒数
             timeTick(){
-                this.remainTime = this.time.RoundRemainTime--
-                this.minute = Math.floor(this.remainTime / 60)
-                this.second = this.remainTime - this.minute * 60
-                if(this.remainTime <= 0){
-                    this.time.remainTime = this.time.Duration * 60
+                this.time.RoundRemainTime--
+                this.minute = Math.floor(this.time.RoundRemainTime / 60)
+                this.second = this.time.RoundRemainTime - this.minute * 60
+                if(this.time.RoundRemainTime <= 0){
+                    this.time.RoundRemainTime = this.time.Duration * 60
                     this.time.NowRound++
                 }
                 return setTimeout(this.timeTick, 1000);
