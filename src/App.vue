@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <v-app>
-            <v-app-bar app clipped-left color="transparent">
+            <v-app-bar app clipped-left color="transparent" v-if="this.$route.name !== 'Login'">
                 <v-toolbar-title>HCTF</v-toolbar-title>
                 <v-toolbar-items class="ml-5">
                     <v-btn text to="/">靶机状态</v-btn>
