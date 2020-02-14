@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto" max-width="400" v-if="info !== null">
+    <v-card  v-if="info !== null">
         <v-list-item two-line>
             <v-list-item-content>
                 <v-list-item-title class="headline">{{info.Name}}</v-list-item-title>

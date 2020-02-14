@@ -1,7 +1,7 @@
 <template>
+    <div>
     <!-- 靶机信息 -->
-    <v-row align="center">
-        <div v-if="gameBoxes.length > 0">
+        <div v-if="gameBoxes !== null">
             <v-list-item v-for="gameBox in gameBoxes" :key="gameBox.ID">
                 <v-list-item-content>
                     <v-list-item-title v-text="gameBox.Title"/>
@@ -11,17 +11,17 @@
 
                 <v-list-item-action>
                     <div v-if="!gameBox.IsAttacked && !gameBox.IsDown">
-                        <v-chip class="ma-2" color="green" text-color="green" style="width: 85px; text-align: center;" outlined>
+                        <v-chip class="ma-2" color="green" text-color="green" outlined>
                             Online
                         </v-chip>
                     </div>
                     <div v-else-if="gameBox.IsDown">
-                        <v-chip class="ma-2" color="orange" text-color="orange" style="width: 85px; text-align: center;" outlined>
+                        <v-chip class="ma-2" color="orange" text-color="orange" outlined>
                             Down
                         </v-chip>
                     </div>
                     <div v-else-if="gameBox.IsAttacked">
-                        <v-chip class="ma-2" color="red" text-color="red" style="width: 85px; text-align: center;" outlined>
+                        <v-chip class="ma-2" color="red" text-color="red" outlined>
                             Attacked
                         </v-chip>
                     </div>
@@ -31,7 +31,7 @@
         <v-list-item v-else>
             <p>暂时还没有题目哟~</p>
         </v-list-item>
-    </v-row>
+    </div>
 </template>
 
 <script>
