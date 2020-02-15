@@ -17,7 +17,8 @@
                 <td>{{item.TeamName}}</td>
                 <td>{{item.Score}}</td>
                 <td v-bind:key="index" v-for="(gameBox, index) in item.GameBoxStatus">
-                    <v-icon color="green lighten-2" v-if="!gameBox.IsDown && !gameBox.IsAttacked">mdi-check-circle</v-icon>
+                    <v-icon color="green lighten-2" v-if="!gameBox.IsDown && !gameBox.IsAttacked">mdi-check-circle
+                    </v-icon>
                     <v-icon color="yellow lighten-2" v-if="gameBox.IsDown">mdi-file-cancel</v-icon>
                     <v-icon color="red lighten-2" v-if="gameBox.IsAttacked">mdi-ghost</v-icon>
                 </td>
@@ -33,12 +34,18 @@
         name: "Rank",
 
         data: () => ({
+            timer: null,
             rankHeader: null,
             rankList: null
         }),
 
         mounted() {
             this.getRank()
+            this.timer = setInterval(this.getRank, 5000)
+        },
+
+        beforeDestroy() {
+            clearInterval(this.timer)
         },
 
         methods: {
