@@ -27,31 +27,44 @@
 <script>
     export default {
         name: "Timer",
-        data(){
-            return{
+        data() {
+            return {
+                timer: null,
+                requestTimer: null,
+
                 time: null,
                 minute: 0,
                 second: 0,
             }
         },
         mounted() {
-            this.utils.GET("/time").then(res => {
-                this.time = res
-                this.timeTick()
-            })
+            this.getTime()
+            this.requestTimer = setInterval(this.getTime, 10000)
+            this.timer = setInterval(this.timeTick, 1000)
         },
 
-        methods:{
+        beforeDestroy() {
+            clearInterval(this.requestTimer)
+            clearInterval(this.timer)
+        },
+
+        methods: {
+            getTime() {
+                this.utils.GET("/time").then(res => {
+                    this.time = res
+                    this.timeTick()
+                })
+            },
+
             // 时间倒数
-            timeTick(){
+            timeTick() {
                 this.time.RoundRemainTime--
                 this.minute = Math.floor(this.time.RoundRemainTime / 60)
                 this.second = this.time.RoundRemainTime - this.minute * 60
-                if(this.time.RoundRemainTime <= 0){
+                if (this.time.RoundRemainTime <= 0) {
                     this.time.RoundRemainTime = this.time.Duration * 60
                     this.time.NowRound++
                 }
-                return setTimeout(this.timeTick, 1000);
             }
         },
     }
