@@ -61,6 +61,10 @@ export default {
         })
     },
 
+    FormatFloat: (number) => {
+        return number.toFixed(2)
+    },
+
     FormatGoTime: (timeString) => {
         return new Date(timeString.split('+')[0].replace('T', ' '))
     },

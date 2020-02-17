@@ -1,7 +1,5 @@
 <template>
     <v-container>
-
-
         <!-- 时间 -->
         <v-card class="mx-auto" max-width="600" color="transparent" flat>
             <Timer/>
@@ -12,6 +10,17 @@
                 <!-- 靶机信息 -->
                 <Info/>
             </v-col>
+            <v-col cols="12" md="8">
+                <v-card class="mx-auto">
+                    <v-card-title></v-card-title>
+                    <v-card-text>
+
+                    </v-card-text>
+                </v-card>
+
+                <br>
+                <SubmitFlag/>
+            </v-col>
         </v-row>
 
     </v-container>
@@ -20,10 +29,11 @@
 <script>
     import Timer from "../components/Timer";
     import Info from "../components/Info";
+    import SubmitFlag from "../components/SubmitFlag";
 
     export default {
         name: "Main",
-        components: {Info, Timer}
+        components: {SubmitFlag, Info, Timer}
     }
 </script>
 

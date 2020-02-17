@@ -13,7 +13,7 @@
         <v-divider/>
         <v-card-actions>
             <v-list-item>
-                #{{ info.Rank }} / {{ info.Score }} 分
+                #{{ info.Rank }} / {{ utils.FormatFloat(info.Score) }} 分
             </v-list-item>
             <v-btn text/>
         </v-card-actions>

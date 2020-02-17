@@ -15,7 +15,7 @@
             <tr v-for="(item, key) in this.rankList" :key="item.ID">
                 <td>{{key + 1}}</td>
                 <td>{{item.TeamName}}</td>
-                <td>{{item.Score}}</td>
+                <td>{{utils.FormatFloat(item.Score)}}</td>
                 <td v-bind:key="index" v-for="(gameBox, index) in item.GameBoxStatus">
                     <v-icon color="green lighten-2" v-if="!gameBox.IsDown && !gameBox.IsAttacked">mdi-check-circle
                     </v-icon>

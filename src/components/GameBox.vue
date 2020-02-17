@@ -7,7 +7,7 @@
                 <v-list-item-content>
                     <v-list-item-title v-text="gameBox.Title"/>
                     <v-list-item-subtitle>{{gameBox.IP}}:{{gameBox.Port}}</v-list-item-subtitle>
-                    <v-list-item-subtitle>{{gameBox.Score}} 分</v-list-item-subtitle>
+                    <v-list-item-subtitle>{{utils.FormatFloat(gameBox.Score)}} 分</v-list-item-subtitle>
                 </v-list-item-content>
 
                 <v-list-item-action>
