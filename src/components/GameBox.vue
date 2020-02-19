@@ -14,16 +14,16 @@
                     <div v-if="!gameBox.IsAttacked && !gameBox.IsDown">
                         <v-chip class="ma-2" color="green" text-color="green" outlined>Online</v-chip>
                     </div>
-                    <div v-else-if="gameBox.IsDown">
+                    <div v-if="gameBox.IsDown">
                         <v-chip class="ma-2" color="orange" text-color="orange" outlined>Down</v-chip>
                     </div>
-                    <div v-else-if="gameBox.IsAttacked">
+                    <div v-if="gameBox.IsAttacked">
                         <v-chip class="ma-2" color="red" text-color="red" outlined>Attacked</v-chip>
                     </div>
                 </v-list-item-action>
             </v-list-item>
         </div>
-        <v-list-item v-else>
+        <v-list-item v-if="gameBoxes.length === 0">
             <p>暂时还没有题目哟~</p>
         </v-list-item>
 
@@ -62,13 +62,26 @@
                     TargetPort: '',
                     Describe: ''
                 },
+
+                timer: null,
             }
         },
 
         mounted() {
-            this.utils.GET("/team/gameboxes").then(res => {
-                this.gameBoxes = res
-            })
+            this.getGameboxes()
+            this.timer = setInterval(this.getGameboxes, 5000)
+        },
+
+        beforeDestroy() {
+            clearInterval(this.timer)
+        },
+
+        methods: {
+            getGameboxes() {
+                this.utils.GET("/team/gameboxes").then(res => {
+                    this.gameBoxes = res
+                })
+            }
         }
     }
 </script>
