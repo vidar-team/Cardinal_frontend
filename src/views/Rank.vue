@@ -60,5 +60,9 @@
 </script>
 
 <style scoped>
-
+    .logo {
+        float: left;
+        width: 50px;
+        height: 50px;
+    }
 </style>
