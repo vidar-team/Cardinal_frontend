@@ -6,5 +6,6 @@ module.exports = {
             new VuetifyLoaderPlugin()
         ],
     },
-    productionSourceMap: false
+    productionSourceMap: false,
+    outputDir: "dist/files"
 }

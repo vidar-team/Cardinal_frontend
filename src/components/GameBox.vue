@@ -23,7 +23,7 @@
                 </v-list-item-action>
             </v-list-item>
         </div>
-        <v-list-item v-if="gameBoxes.length === 0">
+        <v-list-item v-if="gameBoxes === null || gameBoxes.length === 0">
             <p>暂时还没有题目哟~</p>
         </v-list-item>
 
