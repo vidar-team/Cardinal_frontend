@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-let baseURL = 'http://localhost:19999'
+let baseURL = '/api'
 
 export default {
     baseURL: baseURL,

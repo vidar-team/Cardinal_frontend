@@ -7,24 +7,24 @@
                 <v-list-item-content>
                     <v-list-item-title v-text="gameBox.Title"/>
                     <v-list-item-subtitle>{{gameBox.IP}}:{{gameBox.Port}}</v-list-item-subtitle>
-                    <v-list-item-subtitle>{{utils.FormatFloat(gameBox.Score)}} 分</v-list-item-subtitle>
+                    <v-list-item-subtitle>{{utils.FormatFloat(gameBox.Score)}} {{$t('general.score')}}</v-list-item-subtitle>
                 </v-list-item-content>
 
                 <v-list-item-action>
                     <div v-if="!gameBox.IsAttacked && !gameBox.IsDown">
                         <v-chip class="ma-2" color="green" text-color="green" outlined>Online</v-chip>
                     </div>
-                    <div v-else-if="gameBox.IsDown">
+                    <div v-if="gameBox.IsDown">
                         <v-chip class="ma-2" color="orange" text-color="orange" outlined>Down</v-chip>
                     </div>
-                    <div v-else-if="gameBox.IsAttacked">
+                    <div v-if="gameBox.IsAttacked">
                         <v-chip class="ma-2" color="red" text-color="red" outlined>Attacked</v-chip>
                     </div>
                 </v-list-item-action>
             </v-list-item>
         </div>
-        <v-list-item v-else>
-            <p>暂时还没有题目哟~</p>
+        <v-list-item v-if="gameBoxes === null || gameBoxes.length === 0">
+            <p>{{$t('gamebox.empty')}}</p>
         </v-list-item>
 
         <!-- 靶机详细信息 -->
@@ -41,7 +41,7 @@
                 <v-divider/>
                 <v-card-actions>
                     <v-spacer/>
-                    <v-btn color="primary" text @click="showDetail = false">关闭</v-btn>
+                    <v-btn color="primary" text @click="showDetail = false">{{$t('general.close')}}</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -62,13 +62,26 @@
                     TargetPort: '',
                     Describe: ''
                 },
+
+                timer: null,
             }
         },
 
         mounted() {
-            this.utils.GET("/team/gameboxes").then(res => {
-                this.gameBoxes = res
-            })
+            this.getGameboxes()
+            this.timer = setInterval(this.getGameboxes, 5000)
+        },
+
+        beforeDestroy() {
+            clearInterval(this.timer)
+        },
+
+        methods: {
+            getGameboxes() {
+                this.utils.GET("/team/gameboxes").then(res => {
+                    this.gameBoxes = res
+                })
+            }
         }
     }
 </script>

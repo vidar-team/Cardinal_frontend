@@ -3,7 +3,7 @@
         <v-container>
             <div>
                 <h2 v-if="bulletinList !== null && bulletinList.length === 0" class="text-center font-weight-thin mt-5">
-                    暂无公告
+                    {{$t('bulletin.empty')}}
                 </h2>
                 <v-timeline align-top dense v-else>
                     <v-timeline-item v-for="(item, index) in bulletinList" :key="index" color="dark" icon="mdi-bullhorn" fill-dot>

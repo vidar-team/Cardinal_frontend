@@ -3,9 +3,9 @@
         <v-simple-table dark v-if="rankList !== null">
             <thead>
             <tr>
-                <th class="text-center">排名</th>
-                <th class="text-center">队伍</th>
-                <th class="text-center">分数</th>
+                <th class="text-center">{{$t('rank.rank')}}</th>
+                <th class="text-center">{{$t('rank.team')}}</th>
+                <th class="text-center">{{$t('rank.score')}}</th>
                 <th class="text-center" v-bind:key="index" v-for="(header,index) in this.rankHeader">
                     {{header}}
                 </th>
@@ -17,8 +17,7 @@
                 <td>{{item.TeamName}}</td>
                 <td>{{utils.FormatFloat(item.Score)}}</td>
                 <td v-bind:key="index" v-for="(gameBox, index) in item.GameBoxStatus">
-                    <v-icon color="green lighten-2" v-if="!gameBox.IsDown && !gameBox.IsAttacked">mdi-check-circle
-                    </v-icon>
+                    <v-icon color="green lighten-2" v-if="!gameBox.IsDown && !gameBox.IsAttacked">mdi-check-circle</v-icon>
                     <v-icon color="yellow lighten-2" v-if="gameBox.IsDown">mdi-file-cancel</v-icon>
                     <v-icon color="red lighten-2" v-if="gameBox.IsAttacked">mdi-ghost</v-icon>
                 </td>
@@ -60,5 +59,9 @@
 </script>
 
 <style scoped>
-
+    .logo {
+        float: left;
+        width: 50px;
+        height: 50px;
+    }
 </style>

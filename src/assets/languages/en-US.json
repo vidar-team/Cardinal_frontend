@@ -1,0 +1,44 @@
+{
+  "general": {
+    "score": "",
+    "close": "Close",
+    "minute": "Minute",
+    "second": "Second"
+  },
+  "login": {
+    "title": "Login",
+    "account": "Account",
+    "password": "Password",
+    "login": "Login",
+    "reset": "Reset",
+    "loading": "Loading...",
+    "account_empty": "Please input your account",
+    "password_empty": "Please input your password"
+  },
+  "gamebox": {
+    "empty": "No Challenge for Now"
+  },
+  "flag": {
+    "submit": "Submit Flag"
+  },
+  "timer": {
+    "not_begin": "The Game is not ready",
+    "pause": "The Game is pause",
+    "end": "The Game is over",
+    "til_round_end": "To Round {round}:"
+  },
+  "bulletin": {
+    "empty": "No Bulletin"
+  },
+  "rank": {
+    "rank": "#",
+    "team": "Team",
+    "score": "Score"
+  },
+  "header": {
+    "status": "Gamebox Status",
+    "rank": "Rank",
+    "bulletin": "Bulletin",
+    "logout": "Logout"
+  }
+}

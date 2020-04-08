@@ -1,6 +1,6 @@
 <template>
-    <v-card class="mx-auto">
-        <v-card-title>提交 Flag</v-card-title>
+    <v-card class="mx-auto" v-if="info !== null">
+        <v-card-title>{{$t('flag.submit')}}</v-card-title>
         <v-card-text>
             <h2>POST <code style="background-color: #1c1c1c">/flag</code></h2><br>
             <p>Content-Type: application/json</p>

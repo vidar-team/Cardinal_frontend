@@ -1,0 +1,44 @@
+{
+  "general": {
+    "score": "分",
+    "close": "关闭",
+    "minute": "分",
+    "second": "秒"
+  },
+  "login": {
+    "title": "登录",
+    "account": "账号",
+    "password": "密码",
+    "login": "登录",
+    "reset": "重置",
+    "loading": "登录中...",
+    "account_empty": "请输入账号",
+    "password_empty": "请输入密码"
+  },
+  "gamebox": {
+    "empty": "暂时还没有题目哟~"
+  },
+  "flag": {
+    "submit": "提交 Flag"
+  },
+  "timer": {
+    "not_begin": "比赛未开始",
+    "pause": "比赛已暂停",
+    "end": "比赛已结束",
+    "til_round_end": "距离第 {round} 轮结束还有"
+  },
+  "bulletin": {
+    "empty": "暂无公告"
+  },
+  "rank": {
+    "rank": "排名",
+    "team": "队伍",
+    "score": "分数"
+  },
+  "header": {
+    "status": "靶机状态",
+    "rank": "排名",
+    "bulletin": "公告",
+    "logout": "登出"
+  }
+}
