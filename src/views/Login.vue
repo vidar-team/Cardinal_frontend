@@ -7,20 +7,20 @@
         </v-row>
         <br>
         <v-card class="mx-auto" max-width="400">
-            <v-card-title>登录</v-card-title>
+            <v-card-title>{{$t('login.title')}}</v-card-title>
             <v-card-text>
                 <v-form ref="form">
                     <v-text-field
                             v-model="inputForm.Name"
                             :rules="nameRules"
-                            label="账号"
+                            :label="$t('login.account')"
                             required
                             autocomplete="off"
                     />
                     <v-text-field
                             v-model="inputForm.Password"
                             :rules="passwordRules"
-                            label="密码"
+                            :label="$t('login.password')"
                             type="password"
                             required
                             autocomplete="off"
@@ -29,8 +29,8 @@
             </v-card-text>
 
             <v-card-actions>
-                <v-btn text color="primary" @click="onLogin">登录</v-btn>
-                <v-btn text @click="onReset">重置</v-btn>
+                <v-btn text color="primary" @click="onLogin">{{$t('login.login')}}</v-btn>
+                <v-btn text @click="onReset">{{$t('login.reset')}}</v-btn>
             </v-card-actions>
         </v-card>
         <div class="mt-8 text-center">Copyright © 2020 Cardinal</div>
@@ -39,7 +39,7 @@
         <v-dialog v-model="isLoading" hide-overlay persistent width="300">
             <v-card dark>
                 <v-card-text>
-                    <p>登录中.....</p>
+                    <p>{{$t('login.loading')}}</p>
                     <v-progress-linear indeterminate color="white" class="mb-0"/>
                 </v-card-text>
             </v-card>
@@ -60,10 +60,10 @@
                 message: '',
 
                 nameRules: [
-                    v => !!v || '请输入账号'
+                    v => !!v || this.$i18n.t('login.account_empty')
                 ],
                 passwordRules: [
-                    v => !!v || '请输入密码'
+                    v => !!v || this.$i18n.t('login.password_empty')
                 ],
                 inputForm: {
                     Name: '',
@@ -74,7 +74,7 @@
 
         methods: {
             onLogin() {
-                if(!this.$refs.form.validate()){
+                if (!this.$refs.form.validate()) {
                     return
                 }
                 this.utils.POST("/login", this.inputForm, false).then(res => {

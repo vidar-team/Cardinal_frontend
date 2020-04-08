@@ -3,9 +3,9 @@
         <v-simple-table dark v-if="rankList !== null">
             <thead>
             <tr>
-                <th class="text-center">排名</th>
-                <th class="text-center">队伍</th>
-                <th class="text-center">分数</th>
+                <th class="text-center">{{$t('rank.rank')}}</th>
+                <th class="text-center">{{$t('rank.team')}}</th>
+                <th class="text-center">{{$t('rank.score')}}</th>
                 <th class="text-center" v-bind:key="index" v-for="(header,index) in this.rankHeader">
                     {{header}}
                 </th>

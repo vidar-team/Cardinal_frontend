@@ -1,24 +1,24 @@
 <template>
     <v-card-text class="text-center" v-if="time !== null">
         <div v-if="time.Status === 'on'">
-            <div>距离第 {{time.NowRound}} 轮结束还有</div>
+            <div>{{$t('timer.til_round_end',{round: time.NowRound})}}</div>
             <p class="display-1 text--primary">
-                {{minute}} 分 {{second}} 秒
+                {{minute}} {{$t('general.minute')}} {{second}} {{$t('general.second')}}
             </p>
         </div>
         <div v-else-if="time.Status === 'wait'">
             <p class="display-1 text--primary">
-                比赛未开始
+                {{$t('timer.not_begin')}}
             </p>
         </div>
         <div v-else-if="time.Status === 'pause'">
             <p class="display-1 text--primary">
-                比赛已暂停
+                {{$t('timer.pause')}}
             </p>
         </div>
         <div v-else-if="time.Status === 'end'">
             <p class="display-1 text--primary">
-                比赛已结束
+                {{$t('timer.end')}}
             </p>
         </div>
     </v-card-text>
