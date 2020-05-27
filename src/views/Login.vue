@@ -3,7 +3,7 @@
         <v-snackbar v-model="messageBar" color="error" :timeout="2000" :top="true">{{ message }}</v-snackbar>
 
         <v-row align="center" justify="center" style="margin-top: 12%;">
-            <h1 class="display-2 font-weight-thin">HCTF</h1>
+            <h1 class="display-2 font-weight-thin">{{base.Title}}</h1>
         </v-row>
         <br>
         <v-card class="mx-auto" max-width="400">
@@ -59,6 +59,10 @@
                 messageBar: false,
                 message: '',
 
+                base: {
+                    Title: ''
+                },
+
                 nameRules: [
                     v => !!v || this.$i18n.t('login.account_empty')
                 ],
@@ -70,6 +74,12 @@
                     Password: ''
                 }
             }
+        },
+
+        created() {
+            this.utils.GET('/base').then(res => {
+                this.base = res
+            }).catch(() => this.base.Title = 'Cardinal')
         },
 
         methods: {

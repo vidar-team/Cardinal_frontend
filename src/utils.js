@@ -1,6 +1,9 @@
 import axios from 'axios'
 
 let baseURL = '/api'
+if (process.env.NODE_ENV === 'development') {
+    baseURL = 'http://localhost:19999/api'
+}
 
 export default {
     baseURL: baseURL,
