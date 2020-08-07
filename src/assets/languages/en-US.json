@@ -19,7 +19,9 @@
     "empty": "No Challenge for Now"
   },
   "flag": {
-    "submit": "Submit Flag"
+    "submit_flag": "Submit Flag",
+    "submit": "Submit",
+    "input_your_flag": "Please input your flag here..."
   },
   "timer": {
     "not_begin": "The Game is not ready",

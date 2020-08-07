@@ -3,13 +3,13 @@
         <v-snackbar v-model="snackBarVisible" color="error" :timeout="3000" :top="true">{{ message }}</v-snackbar>
 
         <v-card-title>
-            <span style="margin-right: 20px;">{{$t('flag.submit')}}</span>
+            <span style="margin-right: 20px;">{{$t('flag.submit_flag')}}</span>
             <v-text-field
                     v-model="inputFlag"
-                    label="手动提交"
+                    :label="$t('flag.input_your_flag')"
                     clearable
             ></v-text-field>
-            <v-btn style="margin-left: 20px;" @click="submitFlag">提交</v-btn>
+            <v-btn style="margin-left: 20px;" @click="submitFlag">{{$t('flag.submit')}}</v-btn>
         </v-card-title>
         <v-card-text>
             <h2>POST <code style="background-color: #1c1c1c">/flag</code></h2><br>

@@ -19,7 +19,9 @@
     "empty": "暂时还没有题目哟~"
   },
   "flag": {
-    "submit": "提交 Flag"
+    "submit_flag": "提交 Flag",
+    "submit": "提交",
+    "input_your_flag": "请输入你的 Flag"
   },
   "timer": {
     "not_begin": "比赛未开始",
