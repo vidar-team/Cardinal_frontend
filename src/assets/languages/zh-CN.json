@@ -23,6 +23,10 @@
     "submit": "提交",
     "input_your_flag": "请输入你的 Flag"
   },
+  "log": {
+    "submit_flag": "{from} 攻陷了 {to} [ {challenge} ]",
+    "check_down": "{team} [ {challenge} ] 服务宕机"
+  },
   "timer": {
     "not_begin": "比赛未开始",
     "pause": "比赛已暂停",

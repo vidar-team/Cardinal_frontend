@@ -9,20 +9,19 @@
             <v-col cols="6" md="4">
                 <!-- 靶机信息 -->
                 <Info/>
+                <copyrights/>
             </v-col>
             <v-col cols="12" md="8">
                 <v-card class="mx-auto">
-                    <v-card-title></v-card-title>
+                    <v-card-title>实时动态</v-card-title>
                     <v-card-text>
-
+                        <LiveLog/>
                     </v-card-text>
                 </v-card>
-
                 <br>
                 <SubmitFlag/>
             </v-col>
         </v-row>
-
     </v-container>
 </template>
 
@@ -30,10 +29,12 @@
     import Timer from "../components/Timer";
     import Info from "../components/Info";
     import SubmitFlag from "../components/SubmitFlag";
+    import LiveLog from "../components/LiveLog";
+    import Copyrights from "../components/Copyrights";
 
     export default {
         name: "Main",
-        components: {SubmitFlag, Info, Timer}
+        components: {Copyrights, LiveLog, SubmitFlag, Info, Timer}
     }
 </script>
 

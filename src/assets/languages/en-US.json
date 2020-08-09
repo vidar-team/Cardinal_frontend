@@ -23,6 +23,10 @@
     "submit": "Submit",
     "input_your_flag": "Please input your flag here..."
   },
+  "log": {
+    "submit_flag": "{to} [ {challenge} ] was attacked by {from}",
+    "check_down": "{team} [ {challenge} ] down"
+  },
   "timer": {
     "not_begin": "The Game is not ready",
     "pause": "The Game is pause",
