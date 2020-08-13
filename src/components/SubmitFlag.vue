@@ -27,9 +27,7 @@
             <v-divider></v-divider>
             <br>
             <p>
-                <code class="pa-3" style="width: 100%; background-color: #1c1c1c; color: rgba(255, 255, 255, 0.7);">curl
-                    -X POST {{baseURL}}/api/flag -H 'Authorization: {{info.Token}}' -d '{ "flag": "your_flag_here"
-                    }'</code>
+                <code class="pa-3" style="width: 100%; background-color: #1c1c1c; color: rgba(255, 255, 255, 0.7);">{{getCurlCommand()}}</code>
             </p>
         </v-card-text>
     </v-card>
@@ -44,7 +42,6 @@
         data: () => ({
             info: null,
             inputFlag: '',
-            baseURL: window.location.origin,
 
             message: '',
             snackBarVisible: false,
@@ -78,6 +75,13 @@
                     this.snackBarColor = 'error'
                     this.snackBarVisible = true
                 });
+            },
+            getCurlCommand() {
+                // The curl command is different in windows and *nix os.
+                if ((navigator.platform === "Win32") || (navigator.platform === "Windows")) {
+                    return `curl -X POST ${window.location.origin}/api/flag -H "Authorization: ${this.info.Token}" -d "{ \\"flag\\": \\"your_flag_here\\" }"`
+                }
+                return `curl -X POST ${window.location.origin}/api/flag -H 'Authorization: ${this.info.Token}' -d '{ "flag": "your_flag_here" }'`
             }
         }
     }
