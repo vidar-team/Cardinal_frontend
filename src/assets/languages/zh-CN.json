@@ -16,7 +16,11 @@
     "password_empty": "请输入密码"
   },
   "gamebox": {
-    "empty": "暂时还没有题目哟~"
+    "empty": "暂时还没有题目哟~",
+    "list": "所有靶机",
+    "team": "所属队伍",
+    "challenge": "所属题目",
+    "address": "地址"
   },
   "flag": {
     "submit_flag": "提交 Flag",

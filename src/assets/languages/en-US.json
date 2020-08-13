@@ -16,7 +16,11 @@
     "password_empty": "Please input your password"
   },
   "gamebox": {
-    "empty": "No Challenge for Now"
+    "empty": "No Challenge for Now",
+    "list": "GameBox List",
+    "team": "Team",
+    "challenge": "Challenge",
+    "address": "Address"
   },
   "flag": {
     "submit_flag": "Submit Flag",
