@@ -16,10 +16,22 @@
     "password_empty": "请输入密码"
   },
   "gamebox": {
-    "empty": "暂时还没有题目哟~"
+    "empty": "暂时还没有题目哟~",
+    "list": "所有靶机",
+    "team": "所属队伍",
+    "challenge": "所属题目",
+    "address": "地址"
   },
   "flag": {
-    "submit": "提交 Flag"
+    "submit_flag": "提交 Flag",
+    "submit": "提交",
+    "input_your_flag": "请输入你的 Flag"
+  },
+  "log": {
+    "live_log": "实时动态",
+    "no_data": "暂无动态",
+    "submit_flag": "{from} 攻陷了 {to} [ {challenge} ]",
+    "check_down": "{team} [ {challenge} ] 服务宕机"
   },
   "timer": {
     "not_begin": "比赛未开始",
