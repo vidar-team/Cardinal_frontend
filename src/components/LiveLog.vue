@@ -26,6 +26,12 @@
         mounted() {
             this.getStream()
         },
+
+        beforeDestroy() {
+            console.log(1111)
+            this.stream.close()
+        },
+
         methods: {
             getStream() {
                 this.stream = new EventSource(this.utils.baseURL + '/livelog')
