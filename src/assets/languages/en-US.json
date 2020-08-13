@@ -24,6 +24,8 @@
     "input_your_flag": "Please input your flag here..."
   },
   "log": {
+    "live_log": "Live Log",
+    "no_data": "No Data",
     "submit_flag": "{to} [ {challenge} ] was attacked by {from}",
     "check_down": "{team} [ {challenge} ] down"
   },

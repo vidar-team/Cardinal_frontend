@@ -13,7 +13,7 @@
             </v-col>
             <v-col cols="12" md="8">
                 <v-card class="mx-auto">
-                    <v-card-title>实时动态</v-card-title>
+                    <v-card-title>{{$t('log.live_log')}}</v-card-title>
                     <v-card-text>
                         <LiveLog/>
                     </v-card-text>

@@ -24,6 +24,8 @@
     "input_your_flag": "请输入你的 Flag"
   },
   "log": {
+    "live_log": "实时动态",
+    "no_data": "暂无动态",
     "submit_flag": "{from} 攻陷了 {to} [ {challenge} ]",
     "check_down": "{team} [ {challenge} ] 服务宕机"
   },

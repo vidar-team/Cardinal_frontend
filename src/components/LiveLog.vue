@@ -11,7 +11,7 @@
             </template>
         </v-simple-table>
         <div style="height: 200px;" v-else>
-            暂无动态
+            {{$t('log.no_data')}}
         </div>
     </div>
 </template>
