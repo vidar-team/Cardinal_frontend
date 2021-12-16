@@ -33,7 +33,6 @@
                 <v-btn text @click="onReset">{{$t('login.reset')}}</v-btn>
             </v-card-actions>
         </v-card>
-        <div class="mt-8 text-center">Copyright © 2020 Cardinal</div>
 
         <!-- 登录等待 -->
         <v-dialog v-model="isLoading" hide-overlay persistent width="300">
